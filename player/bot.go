@@ -1,7 +1,6 @@
 package player
 
 import (
-	"math/rand"
 	"rockpaperscissors/values"
 )
 
@@ -19,14 +18,18 @@ func NewBot(n string) *Bot {
 func (p Bot) GetName() string {
 	// HINWEIS:
 	// Greifen Sie mit p.Name auf den Namen des Spielers zu.
-	return p.Name
+
+	// TODO
+	return ""
 }
 
 // GetScore liefert den Punktestand des Spielers.
 func (p Bot) GetScore() int {
 	// HINWEIS:
 	// Greifen Sie mit p.Score auf den Punktestand des Spielers zu.
-	return p.Score
+
+	// TODO
+	return 0
 }
 
 // IncrementScore erhöht den Punktestand des Spielers um eins.
@@ -34,7 +37,8 @@ func (p *Bot) IncrementScore() {
 	// HINWEIS:
 	// Greifen Sie mit p.Score auf den Punktestand des Spielers zu.
 	// Sie können p.Score wie eine reguläre Variable verwenden.
-	p.Score++
+
+	// TODO
 }
 
 // GetMove liefert einen Zug des Spielers.
@@ -42,5 +46,7 @@ func (p Bot) GetMove() values.Value {
 	// HINWEIS:
 	// Verwenden Sie die Funktion rand.Intn(3) um eine Zufallszahl zwischen 0 und 2 zu erzeugen.
 	// Verwenden Sie dann values.Value() um die Zufallszahl in einen Wert umzuwandeln.
-	return values.Value(rand.Intn(3))
+
+	// TODO
+	return values.Rock
 }
