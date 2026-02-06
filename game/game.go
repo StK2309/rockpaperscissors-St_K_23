@@ -37,23 +37,24 @@ func (g *Game) Play() {
 	fmt.Printf("%v hat %v gewählt.\n", g.Player1.GetName(), v1)
 	fmt.Printf("%v hat %v gewählt.\n", g.Player2.GetName(), v2)
 
-	// TODO
-	if v1 == v2 {
-		fmt.Println("Duce")
-	}
-
-	if (v1 == player.Rock && v2 == player.Scissors) ||
-		(v1 == player.Paper && v2 == player.Rock) ||
-		(v1 == player.Scissors && v2 == player.Paper) {
+	if v1.Beats(v2) {
 		fmt.Printf("%v gewinnt!\n", g.Player1.GetName())
 		g.Player1.IncrementScore()
-	} else {
+	} else if v2.Beats(v1) {
 		fmt.Printf("%v gewinnt!\n", g.Player2.GetName())
 		g.Player2.IncrementScore()
+	} else {
+		fmt.Println("Unentschieden!")
 	}
+
+	g.PrintScores()
 }
 
 // PrintScores gibt den Punktestand beider Spieler auf die Konsole aus.
 func (g Game) PrintScores() {
 	// TODO
+	fmt.Println("Punktestand:")
+	fmt.Printf("  %v: %d\n", g.Player1.GetName(), g.Player1.GetScore())
+	fmt.Printf("  %v: %d\n", g.Player2.GetName(), g.Player2.GetScore())
+	fmt.Println()
 }
